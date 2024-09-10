@@ -7,6 +7,15 @@ class ExpenseTracker {
       category4: document.getElementById('enttotal'),
       category5: document.getElementById('shoptotal')
     };
+    this.retriveLocalStorage();
+  }
+
+  retriveLocalStorage(){
+    this.addTo(localStorage.getItem('category1'), 'category1');
+    this.addTo(localStorage.getItem('category2'), 'category2');
+    this.addTo(localStorage.getItem('category3'), 'category3');
+    this.addTo(localStorage.getItem('category4'), 'category4');
+    this.addTo(localStorage.getItem('category5'), 'category5');
   }
 
   addTo(value, category) {
@@ -15,14 +24,13 @@ class ExpenseTracker {
     let textInt = parseInt(text.slice(1));
     textInt += parseInt(value);
     element.innerText = `$${textInt}`;
-    setTimeout(() => {
-      window.alert('Expense successfully added!')
-    }, 300);
+    localStorage.setItem(category, textInt);
   }
 
   reset(category) {
     let element = this.categories[`${category}`];
     element.innerText = "$0";
+    localStorage.setItem(category, "0");
     setTimeout(() => {
       window.alert('Category successfully reseted!');
     }, 300);
