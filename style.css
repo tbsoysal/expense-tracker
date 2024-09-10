@@ -140,5 +140,9 @@ h2 {
   font-weight: 800;
   font-family: inherit;
   color: white;
-  margin: 2rem 0;
+  margin-top: 1rem;
+}
+
+.form-container #resetBtn {
+  margin-bottom: 2rem;
 }
