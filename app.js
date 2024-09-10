@@ -39,6 +39,7 @@ form.addEventListener('submit', (e) => {
   const input = document.getElementById('amount');
   const category = document.getElementById('category-menu');
   tracker.addTo(input.value, category.value);
+  input.value = '';
 })
 
 resetBtn.addEventListener('click', () => {
