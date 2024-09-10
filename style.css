@@ -141,6 +141,7 @@ h2 {
   font-family: inherit;
   color: white;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 .form-container #resetBtn {

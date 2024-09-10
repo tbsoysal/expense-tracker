@@ -7,15 +7,17 @@ class ExpenseTracker {
       category4: document.getElementById('enttotal'),
       category5: document.getElementById('shoptotal')
     };
-    this.retriveLocalStorage();
+    if(localStorage.length > 0){
+      this.retriveLocalStorage();
+    }
   }
 
   retriveLocalStorage(){
-    this.addTo(localStorage.getItem('category1'), 'category1');
-    this.addTo(localStorage.getItem('category2'), 'category2');
-    this.addTo(localStorage.getItem('category3'), 'category3');
-    this.addTo(localStorage.getItem('category4'), 'category4');
-    this.addTo(localStorage.getItem('category5'), 'category5');
+    for (const category in this.categories) {
+      if (localStorage.getItem(category)) {
+        this.addTo(localStorage.getItem(category), category);
+      }
+    }
   }
 
   addTo(value, category) {
