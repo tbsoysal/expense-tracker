@@ -40,7 +40,6 @@ class ExpenseTracker {
 }
 
 const tracker = new ExpenseTracker();
-
 const form = document.querySelector('form');
 const resetBtn = document.getElementById('resetBtn');
 
